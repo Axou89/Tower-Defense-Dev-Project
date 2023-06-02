@@ -4,12 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-<<<<<<< HEAD
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Samples/Netcode for GameObjects/1.4.0/Bootstrap/Scenes/Bootstrap.unity
-    guid: 7a6e122bd2b01425989087a299b6bb93
-=======
   m_Scenes: []
->>>>>>> 9773b4788e2b697149cc7859877f99004d0e1537
   m_configObjects: {}
