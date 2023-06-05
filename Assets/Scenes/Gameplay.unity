@@ -397,11 +397,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 115840725}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25471d1610fc7b64e973a49b9936bb86, type: 3}
+  m_Script: {fileID: 11500000, guid: cd772b2c29998dc41910e2624f15b9ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GoldText: {fileID: 172168623}
-  NumberOfGold: 0
+  ClockText: {fileID: 848934722}
+  elapsedTime: 0
 --- !u!4 &115840727
 Transform:
   m_ObjectHideFlags: 0
@@ -426,11 +426,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 115840725}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cd30175b0498844abe9792127545e98, type: 3}
+  m_Script: {fileID: 11500000, guid: 87028794f671e6743b6a1f9763de9615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfMagic: 0
-  MagicSlider: {fileID: 1292371926}
+  GoldText: {fileID: 172168623}
+  NumberOfGold: 0
 --- !u!114 &115840729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,11 +440,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 115840725}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 312d2baad8dc72046afe63d258ed879d, type: 3}
+  m_Script: {fileID: 11500000, guid: 95dc209b839f5114e8a832abaea05e6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ClockText: {fileID: 848934722}
-  elapsedTime: 0
+  NumberOfMagic: 0
+  MagicSlider: {fileID: 1292371926}
 --- !u!1 &172168621
 GameObject:
   m_ObjectHideFlags: 0
@@ -3032,7 +3032,7 @@ GameObject:
   - component: {fileID: 898642394}
   - component: {fileID: 898642393}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Score2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4797,7 +4797,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 556441434e581d64fa1d0c9c2fafb07b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 04b2e421f07fea44c9978a2fc04ef815, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5005,7 +5005,7 @@ GameObject:
   - component: {fileID: 1732978461}
   - component: {fileID: 1732978460}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Score1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
