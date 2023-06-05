@@ -6,10 +6,11 @@ public class Gold : MonoBehaviour
 {
     public Text GoldText;
     public int NumberOfGold;
+    public float i = 1f;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(enumerator());
+        StartCoroutine(enumerator(i));
     }
 
     // Update is called once per frame
@@ -17,11 +18,11 @@ public class Gold : MonoBehaviour
     {
         
     }
-    IEnumerator enumerator()
+    IEnumerator enumerator(float i)
     {
         NumberOfGold += 1;
         GoldText.text = "Gold : " + NumberOfGold;
-        yield return new WaitForSeconds(1);
-        StartCoroutine(enumerator());
+        yield return new WaitForSeconds(i);
+        StartCoroutine(enumerator(i));
     }
 }
