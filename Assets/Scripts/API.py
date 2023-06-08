@@ -19,18 +19,20 @@ def get_database():
 
  
    # Create a connection using MongoClient. You can import MongoClient or use pymongo.MongoClient
-   client = MongoClient('mongodb+srv://'+str(USERNAME)+':'+str(PASSWORD)+'@quackochocolat.bsxbipg.mongodb.net/', 27017)
-   
- 
+   print(USERNAME,PASSWORD)
+   client = MongoClient('mongodb+srv://admin:VjIPOBWbTGVDwl4V@quackochocolat.bsxbipg.mongodb.net/TowerDefense', 27017)
+ #mongodb+srv://admin:VjIPOBWbTGVDwl4V@quackochocolat.bsxbipg.mongodb.net/
    # Create the database for our example (we will use the same database throughout the tutorial
-   db = client['TowerDefense']
-   collection = db['TowerDefense']
+   
+   db = client['Tower_Defense']
+   collection = db['Player']
 
-
-   #
-   # collection.insert_many(data)
+   users = [{
+       "username": "admin","password": "admin"
+   }]
+   collection.insert_many(users)  # Add user           
    print("Data inserted in the database")
-  
+ # 
 get_database()
 
 def InitialiseFlask():
