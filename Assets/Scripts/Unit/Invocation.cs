@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Invocation : MonoBehaviour
 {
+    public ChoseLane Lane;
     public Gold Gold;
     // Start is called before the first frame update
     void Start()
@@ -18,19 +19,102 @@ public class Invocation : MonoBehaviour
     }
     public void Skeleton()
     {
-        if (Gold.NumberOfGold >=5)
+        if (Lane.Middle == true)
         {
-            Gold.NumberOfGold -= 5;
-            // FAIRE INVOCATION UNITE
+            if (Gold.NumberOfGold >=5)
+            {
+                Gold.NumberOfGold -= 5;
+                // FAIRE INVOCATION UNITE Au mid
+            }
+        }
+        else if (Lane.Top == true)
+        {
+            if (Gold.NumberOfGold >= 5)
+            {
+                Gold.NumberOfGold -= 5;
+                // FAIRE INVOCATION UNITE Au mid
+            }
+        }
+        else if (Lane.Top2 == true)
+        {
+            if (Gold.NumberOfGold >= 5)
+            {
+                Gold.NumberOfGold -= 5;
+                // FAIRE INVOCATION UNITE Au mid
+            }
+        }
+        else if (Lane.Bot == true)
+        {
+            if (Gold.NumberOfGold >= 5)
+            {
+                Gold.NumberOfGold -= 5;
+                // FAIRE INVOCATION UNITE Au mid
+            }
+        }
+        else if (Lane.Bot2 == true)
+        {
+            if (Gold.NumberOfGold >= 5)
+            {
+                Gold.NumberOfGold -= 5;
+                // FAIRE INVOCATION UNITE Au mid*
+                
+            }
+        }
+        else
+        {
+            // Faire Msg (" vous devez cliquer sur une lane d'abords ) 
         }
     }
     public void Magician()
     {
-        if (Gold.NumberOfGold >= 10)
+        if (Lane.Top2)
         {
-            Gold.NumberOfGold -= 10;
-            // FAIRE INVOCATION UNITE
+            if (Gold.NumberOfGold >= 10)
+            {
+                Gold.NumberOfGold -= 10;
+                // FAIRE INVOCATION UNITE
+            }
         }
+        else if (Lane.Top)
+        {
+            if (Gold.NumberOfGold >= 10)
+            {
+                Gold.NumberOfGold -= 10;
+                // FAIRE INVOCATION UNITE
+            }
+        }
+
+        else if (Lane.Middle)
+        {
+            if (Gold.NumberOfGold >= 10)
+            {
+                Gold.NumberOfGold -= 10;
+                // FAIRE INVOCATION UNITE
+            }
+        }
+
+        else if (Lane.Bot)
+        {
+            if (Gold.NumberOfGold >= 10)
+            {
+                Gold.NumberOfGold -= 10;
+                // FAIRE INVOCATION UNITE
+            }
+        }
+
+        else if (Lane.Bot2)
+        {
+            if (Gold.NumberOfGold >= 10)
+            {
+                Gold.NumberOfGold -= 10;
+                // FAIRE INVOCATION UNITE
+            }
+        }
+        else
+        {
+            // Faire Msg (" vous devez cliquer sur une lane d'abords ) 
+        }
+
     }
     public void Upgrade1()
     {

@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using MongoDB.Driver;
+//using MongoDB.Driver;
 
 public class MongoDB : MonoBehaviour
 {
-
+    /*
     private MongoClient client;
     private IMongoDatabase database;
     private IMongoCollection<User> userCollection;
@@ -56,5 +56,5 @@ public class User
     public string Username { get; set; }
     public string Password { get; set; }
 }
-
+    */
 }
