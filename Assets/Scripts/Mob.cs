@@ -14,14 +14,17 @@ public class Mob : MonoBehaviour
     public float AttackSpeed;
     public float Range;
     public float GoldPrice;
-    public Transform SpawnPoint;
-    public Transform EndPoint;
+    public Transform[] Points;
 
     private bool isMoving = true;
+    private int currentPosition = 1;
+    private int lenPosition;
+    private bool isInvincible = false;
 
     void Start()
     {
-        this.transform.position = SpawnPoint.position;
+        this.transform.position = Points[0].position;
+        lenPosition = Points.Length;
     }
 
     void Update()
@@ -33,29 +36,45 @@ public class Mob : MonoBehaviour
 
         if (isMoving)
         {
-            transform.position = Vector3.MoveTowards(transform.position, EndPoint.position, Speed * Time.deltaTime);
-
-            if (transform.position == EndPoint.position)
+            transform.position = Vector3.MoveTowards(transform.position, Points[currentPosition].position, Speed * Time.deltaTime);
+            if (transform.position == Points[currentPosition].position)
             {
-                isMoving = false;
+                currentPosition++;
+                if (currentPosition >= lenPosition)
+                {
+                    isMoving = false;
+                }
             }
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    IEnumerator GetHit(Collider other)
     {
-        if (other.GetType().ToString().Equals("UnityEngine.BoxCollider") && !this.CompareTag(other.gameObject.tag))
+        while (!isInvincible)
         {
             isMoving = false;
             // Start animation attack
-            bool EnemyShield = other.gameObject.GetComponent<Mob>().Shield;
-            if (EnemyShield)
+            if (other.gameObject.GetComponent<Mob>().Shield)
             {
-                EnemyShield = false;
-            } else
+                other.gameObject.GetComponent<Mob>().Shield = false;
+            }
+            else
             {
                 other.gameObject.GetComponent<Mob>().PV -= AD / Armor + AP / RM;
             }
+
+            isInvincible = true;
+            yield return new WaitForSeconds(0.5f);
+        }
+        
+        isInvincible = false;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.GetType().ToString().Equals("UnityEngine.BoxCollider") && !this.CompareTag(other.gameObject.tag) && !isInvincible)
+        {
+            StartCoroutine(GetHit(other));
         }
     }
 }

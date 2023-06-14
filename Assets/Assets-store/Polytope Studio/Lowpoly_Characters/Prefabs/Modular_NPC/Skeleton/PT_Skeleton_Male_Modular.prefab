@@ -1632,6 +1632,7 @@ MonoBehaviour:
   AttackSpeed: 1
   Range: 1
   GoldPrice: 0
+  Points: []
 --- !u!135 &7872908409410926020
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1656,8 +1657,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.59901404, y: 2.3613982, z: 0.5737732}
-  m_Center: {x: 0.005591497, y: 0.6806991, z: -0.0071130693}
+  m_Size: {x: 0.59901404, y: 1.7882771, z: 0.5737732}
+  m_Center: {x: 0.0055915117, y: 0.8962569, z: -0.0071130693}
 --- !u!54 &993742272496076278
 Rigidbody:
   m_ObjectHideFlags: 0
