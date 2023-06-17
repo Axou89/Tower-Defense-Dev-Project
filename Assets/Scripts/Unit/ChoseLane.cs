@@ -30,24 +30,40 @@ public class ChoseLane : MonoBehaviour
     {
         if (Middle == false && Top == false && Top2 == false && Bot == false && Bot2 == false)
         {
-            Debug.Log("Middle lane clicked ! ");
+        Debug.Log("Middle Click");
             Middle = true;
         }
     }
     public void TopLane()
     {
+        if (Middle == false && Top == false && Top2 == false && Bot == false && Bot2 == false)
+        {
         Debug.Log("Top lane clicked ! ");
+            Top = true;
+        }
     }
     public void TopLane2()
     {
+        if (Middle == false && Top == false && Top2 == false && Bot == false && Bot2 == false)
+        {
         Debug.Log("Top lane 2 clicked ! ");
+            Top2 = true;
+        }
     }
     public void BotLane()
     {
+        if (Middle == false && Top == false && Top2 == false && Bot == false && Bot2 == false)
+        {
         Debug.Log("Bot lane clicked ! ");
+            Bot  = true;
+        }
     }
     public void BotLane2()
     {
+        if (Middle == false && Top == false && Top2 == false && Bot == false && Bot2 == false)
+        {
         Debug.Log("Bot lane 2 clicked ! ");
+            Bot2 = true;
+        }
     }
 }

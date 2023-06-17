@@ -713,15 +713,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12a2b5fc643feeb479b574aa496a525e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  createButton: {fileID: 1553882527}
-  lobbyNameButton: {fileID: 1483089083}
-  publicPrivateButton: {fileID: 75822289}
-  maxPlayersButton: {fileID: 395793958}
-  gameModeButton: {fileID: 2065547045}
-  lobbyNameText: {fileID: 1970104904}
-  publicPrivateText: {fileID: 309765383}
-  maxPlayersText: {fileID: 854093329}
-  gameModeText: {fileID: 1347073496}
 --- !u!1 &175591350
 GameObject:
   m_ObjectHideFlags: 0
@@ -4358,7 +4349,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e62dad883f69d8744897d642d8f21378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  authenticateButton: {fileID: 1728648182}
 --- !u!1 &1111438098
 GameObject:
   m_ObjectHideFlags: 0
@@ -4908,15 +4898,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602f74cbbbd80034b96f88091a8e7c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverBehaviourType: 1
-  hoverBehaviour_Color_Enter: {r: 0.7735849, g: 0.19679989, b: 0.14960839, a: 1}
-  hoverBehaviour_Color_Exit: {r: 0.6313726, g: 0.20000002, b: 0.16470589, a: 1}
-  hoverBehaviour_Image: {fileID: 791394835}
-  hoverBehaviour_Sprite_Exit: {fileID: 0}
-  hoverBehaviour_Sprite_Enter: {fileID: 0}
-  hoverBehaviour_Move: 0
-  hoverBehaviour_Move_Amount: {x: 0, y: 0}
-  triggerMouseOutFuncOnClick: 1
 --- !u!1 &1306304131
 GameObject:
   m_ObjectHideFlags: 0
@@ -4969,7 +4950,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a58f2a8109a04874691bbc6efef8d0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNameText: {fileID: 1051405579}
 --- !u!114 &1306304134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5362,13 +5342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6277d275dd185f4bb3bdd693f3d77f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSingleTemplate: {fileID: 1599793332}
-  container: {fileID: 185866329}
-  lobbyNameText: {fileID: 1189192793}
-  playerCountText: {fileID: 316046451}
-  gameModeText: {fileID: 1552482529}
-  leaveLobbyButton: {fileID: 204215838}
-  changeGameModeButton: {fileID: 596980448}
 --- !u!1 &1347073494
 GameObject:
   m_ObjectHideFlags: 0
@@ -5563,10 +5536,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c657aa120c4114fbbcb24fd9d206e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lobbySingleTemplate: {fileID: 1494810693}
-  container: {fileID: 936159898}
-  refreshButton: {fileID: 1935005803}
-  createLobbyButton: {fileID: 1479069166}
 --- !u!1 &1362602491
 GameObject:
   m_ObjectHideFlags: 0
@@ -6377,9 +6346,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e337cb0ba2507784da6f315a8a46d079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lobbyNameText: {fileID: 1324317961}
-  playersText: {fileID: 258751206}
-  gameModeText: {fileID: 38053354}
 --- !u!1 &1530986683
 GameObject:
   m_ObjectHideFlags: 0
@@ -7093,9 +7059,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3934507b37018c4880b82115e2ce40d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNameText: {fileID: 282668370}
-  characterImage: {fileID: 1532098931}
-  kickPlayerButton: {fileID: 2051356606}
 --- !u!1 &1625961055
 GameObject:
   m_ObjectHideFlags: 0
@@ -7108,6 +7071,7 @@ GameObject:
   - component: {fileID: 1625961059}
   - component: {fileID: 1625961058}
   - component: {fileID: 1625961057}
+  - component: {fileID: 1625961060}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -7179,7 +7143,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1625961058}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1625961060}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: MainScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1625961058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7218,6 +7194,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625961055}
   m_CullTransparentMesh: 1
+--- !u!114 &1625961060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625961055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4911dad4a3339849be38fadc4e5df25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1648181456
 GameObject:
   m_ObjectHideFlags: 0
@@ -8204,15 +8192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602f74cbbbd80034b96f88091a8e7c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverBehaviourType: 1
-  hoverBehaviour_Color_Enter: {r: 0.27321622, g: 0.8207547, b: 0.15873085, a: 1}
-  hoverBehaviour_Color_Exit: {r: 0.25490198, g: 0.6862745, b: 0.16470589, a: 1}
-  hoverBehaviour_Image: {fileID: 49661435}
-  hoverBehaviour_Sprite_Exit: {fileID: 0}
-  hoverBehaviour_Sprite_Enter: {fileID: 0}
-  hoverBehaviour_Move: 0
-  hoverBehaviour_Move_Amount: {x: 0, y: 0}
-  triggerMouseOutFuncOnClick: 0
 --- !u!1 &1897898479
 GameObject:
   m_ObjectHideFlags: 0
