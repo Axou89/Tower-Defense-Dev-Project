@@ -18,6 +18,7 @@ public class ServerRpc : MonoBehaviour
     }
     public void SqueletteServerCommand()
     {
-        invocation.SkeletonServer();
+        Debug.Log("Tentative 1..");
+        invocation.SkeletonServerRpc();
     }
 }

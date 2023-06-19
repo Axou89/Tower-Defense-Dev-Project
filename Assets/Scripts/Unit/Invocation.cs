@@ -37,12 +37,11 @@ public class Invocation : NetworkBehaviour
         else
         {
             Debug.Log("client");
-            NetworkObject networkObject = GetComponent<NetworkObject>();
-            networkObject.Invoke("SkeletonServerRpc", 0f);
+            SkeletonServerRpc();
         }
     }
 
-    [ServerRpc(RequireOwnership = false )]
+    [ServerRpc]
     public void SkeletonServerRpc()
     {
         Debug.Log("Invocation");
