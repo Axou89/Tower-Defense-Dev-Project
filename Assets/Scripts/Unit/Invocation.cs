@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Invocation : MonoBehaviour
+using Unity.Netcode;
+public class Invocation : NetworkBehaviour
 {
     public ChoseLane Lane;
     public Gold Gold;
@@ -25,8 +25,28 @@ public class Invocation : MonoBehaviour
     {
         
     }
-    public void Skeleton()
+    public void SkeletonServer()
     {
+        Debug.Log("Tentative d'invocation de squelette...");
+        if (IsHost || IsServer)
+        {
+            Debug.Log("Admin");
+            SkeletonServerRpc();
+
+        }
+        else
+        {
+            Debug.Log("client");
+            NetworkObject networkObject = GetComponent<NetworkObject>();
+            networkObject.Invoke("SkeletonServerRpc", 0f);
+        }
+    }
+
+    [ServerRpc(RequireOwnership = false )]
+    public void SkeletonServerRpc()
+    {
+        Debug.Log("Invocation");
+
         if (Lane.Middle == true)
         {
             if (Gold.NumberOfGold >= 5)
@@ -37,6 +57,8 @@ public class Invocation : MonoBehaviour
                 if (Choix.Player == 1)
                 {
                     GameObject Monster = Instantiate(Squelette, new Vector3(15f, 2.14f, 49.62f), Quaternion.identity);
+                    NetworkObject InvocationMonsterObject = Monster.GetComponent<NetworkObject>();
+                    Monster.GetComponent<NetworkObject>().Spawn(); ;   // Marche mais ça spawn que si serveur ou host
                     Monster.tag = "MobAlly";
                     Debug.Log("Squelette equipe1 invoqué");
                 }
@@ -146,51 +168,118 @@ public class Invocation : MonoBehaviour
     
     public void Magician()
     {
-        if (Lane.Top2)
+        if (Lane.Middle == true)
         {
             if (Gold.NumberOfGold >= 10)
             {
                 Gold.NumberOfGold -= 10;
-                // FAIRE INVOCATION UNITE
+                Debug.Log("Invocation du Player : " + Choix.Player);
+                Lane.Middle = false;
+                if (Choix.Player == 1)
+                {
+                    GameObject Monster = Instantiate(Magicien, new Vector3(15f, 2.14f, 49.62f), Quaternion.identity);
+                    Monster.tag = "MobAlly";
+                    Debug.Log("Magicien equipe1 invoqué");
+                }
+                else if (Choix.Player == 2)
+                {
+                    GameObject Monster = Instantiate(Magicien, new Vector3(82, 2.14f, 49.62f), Quaternion.identity);
+                    Monster.tag = "MobEnemy";
+                    Debug.Log("Magicien equipe2 invoqué");
+                }
             }
         }
-        else if (Lane.Top)
+        else if (Lane.Top == true)
         {
             if (Gold.NumberOfGold >= 10)
             {
                 Gold.NumberOfGold -= 10;
-                // FAIRE INVOCATION UNITE
+                Debug.Log("Invocation du Player : " + Choix.Player);
+                Lane.Top = false;
+                if (Choix.Player == 1)
+                {
+                    GameObject Monster = Instantiate(Magicien, new Vector3(15f, 2.14f, 69.3f), Quaternion.identity);
+                    Monster.tag = "MobAlly";
+                    Debug.Log("Magicien equipe1 invoqué");
+                }
+                else if (Choix.Player == 2)
+                {
+                    GameObject Monster = Instantiate(Magicien, new Vector3(82, 2.14f, 69.3f), Quaternion.identity);
+                    Monster.tag = "MobEnemy";
+                    Debug.Log("Magicien equipe2 invoqué");
+                }
+            }
+        }
+        else if (Lane.Top2 == true)
+        {
+            if (Gold.NumberOfGold >= 10)
+            {
+                Gold.NumberOfGold -= 10;
+                Debug.Log("Invocation du Player : " + Choix.Player);
+                Lane.Top2 = false;
+                if (Choix.Player == 1)
+                {
+                    GameObject Monster = Instantiate(Magicien, new Vector3(15f, 2.14f, 75.4f), Quaternion.identity);
+                    Monster.tag = "MobAlly";
+                    Debug.Log("Magicien equipe1 invoqué");
+                }
+                else if (Choix.Player == 2)
+                {
+                    GameObject Monster = Instantiate(Magicien, new Vector3(83.3f, 2.14f, 75.4f), Quaternion.identity);
+                    Monster.tag = "MobEnemy";
+                    Debug.Log("Magicien equipe2 invoqué");
+                }
             }
         }
 
-        else if (Lane.Middle)
+
+        else if (Lane.Bot == true)
         {
             if (Gold.NumberOfGold >= 10)
             {
                 Gold.NumberOfGold -= 10;
-                // FAIRE INVOCATION UNITE
+                Debug.Log("Invocation du Player : " + Choix.Player);
+                Lane.Bot = false;
+                if (Choix.Player == 1)
+                {
+                    GameObject Monster = Instantiate(Magicien, new Vector3(15f, 2.14f, 31.3f), Quaternion.identity);
+                    Monster.tag = "MobAlly";
+                    Debug.Log("Squelette equipe1 invoqué");
+                }
+                else if (Choix.Player == 2)
+                {
+                    GameObject Monster = Instantiate(Magicien, new Vector3(81.5f, 2.14f, 31.3f), Quaternion.identity);
+                    Monster.tag = "MobEnemy";
+                    Debug.Log("Magicien equipe2 invoqué");
+                }
             }
         }
-
-        else if (Lane.Bot)
+        else if (Lane.Bot2 == true)
         {
             if (Gold.NumberOfGold >= 10)
             {
-                Gold.NumberOfGold -= 10;
-                // FAIRE INVOCATION UNITE
-            }
-        }
 
-        else if (Lane.Bot2)
-        {
-            if (Gold.NumberOfGold >= 10)
-            {
                 Gold.NumberOfGold -= 10;
-                // FAIRE INVOCATION UNITE
+                Debug.Log("Invocation du Player : " + Choix.Player);
+                Lane.Bot2 = false;
+                if (Choix.Player == 1)
+                {
+                    GameObject Monster = Instantiate(Magicien, new Vector3(15f, 2.14f, 26.1f), Quaternion.identity);
+                    Monster.tag = "MobAlly";
+                    Debug.Log("Magicien equipe1 invoqué");
+                }
+                else if (Choix.Player == 2)
+                {
+                    GameObject Monster = Instantiate(Magicien, new Vector3(81.5f, 2.14f, 26.1f), Quaternion.identity);
+                    Monster.tag = "MobEnemy";
+                    Debug.Log("Magicien equipe2 invoqué");
+                }
+
             }
         }
         else
         {
+            Debug.Log("too late");
             // Faire Msg (" vous devez cliquer sur une lane d'abords ) 
         }
 
