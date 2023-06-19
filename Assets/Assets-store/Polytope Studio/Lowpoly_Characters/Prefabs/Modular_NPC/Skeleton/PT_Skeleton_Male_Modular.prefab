@@ -1629,11 +1629,15 @@ MonoBehaviour:
   RM: 1
   PV: 1
   Shield: 0
-  Speed: 1
+  Speed: 5
   AttackSpeed: 1
   Range: 1
   GoldPrice: 0
-  Points: []
+  Points:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!135 &7872908409410926020
 SphereCollider:
   m_ObjectHideFlags: 0
