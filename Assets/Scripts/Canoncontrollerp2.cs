@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Canoncontroller : MonoBehaviour
+public class Canoncontrollerp2 : MonoBehaviour
 {
     public GameObject cannonBallPrefab; // Prefab du boulet de canon
     public Transform spawnPoint; // Spawn boulet
@@ -43,7 +43,7 @@ public class Canoncontroller : MonoBehaviour
         // Récuperer le mob le plus proche
         // Return le transform de l'ennemi
 
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("MobP2");
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("MobP1");
         Transform nearestEnemy = null;
         float closestDistance = float.MaxValue;
 
