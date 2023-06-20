@@ -82,14 +82,14 @@ public class Invocation : NetworkBehaviour
                 {
                     GameObject Monster = Instantiate(Squelette, new Vector3(15f, 2.14f, 69.3f), Quaternion.identity);
                     Monster.tag = "MobAlly";
-                    SummonTopP1(Monster);
+                    SummonTop2P1(Monster);
                     Debug.Log("Squelette equipe1 invoqué");
                 }
                 else if (Choix.Player == 2)
                 {
                     GameObject Monster = Instantiate(Squelette, new Vector3(82, 2.14f, 69.3f), Quaternion.identity);
                     Monster.tag = "MobEnemy";
-                    SummonTopP2(Monster);
+                    SummonTop2P2(Monster);
                     Debug.Log("Squelette equipe2 invoqué");
                 }
             }
@@ -105,14 +105,14 @@ public class Invocation : NetworkBehaviour
                 {
                     GameObject Monster = Instantiate(Squelette, new Vector3(15f, 2.14f, 75.4f), Quaternion.identity);
                     Monster.tag = "MobAlly";
-                    SummonTop2P2(Monster);
+                    SummonTopP1(Monster);
                     Debug.Log("Squelette equipe1 invoqué");
                 }
                 else if (Choix.Player == 2)
                 {
                     GameObject Monster = Instantiate(Squelette, new Vector3(83.3f, 2.14f, 75.4f), Quaternion.identity);
                     Monster.tag = "MobEnemy";
-                    SummonTop2P2(Monster);
+                    SummonTopP2(Monster);
                     Debug.Log("Squelette equipe2 invoqué");
                 }
             }
@@ -296,7 +296,7 @@ public class Invocation : NetworkBehaviour
     private void SummonMidP1(GameObject Monster)
     {
         int count = 0;
-        GameObject lane = GameObject.Find("3rdLane");
+        GameObject lane = GameObject.Find("MidLane");
         Transform[] points = lane.GetComponentsInChildren<Transform>();
         for (int i = 1; i < points.Length; i++)
         {
@@ -308,7 +308,7 @@ public class Invocation : NetworkBehaviour
     private void SummonMidP2(GameObject Monster)
     {
         int count = 0;
-        GameObject lane = GameObject.Find("3rdLane");
+        GameObject lane = GameObject.Find("MidLane");
         Transform[] points = lane.GetComponentsInChildren<Transform>();
         for (int i = points.Length - 1; i >= 1; i--)
         {
@@ -320,7 +320,7 @@ public class Invocation : NetworkBehaviour
     private void SummonTopP1(GameObject Monster)
     {
         int count = 0;
-        GameObject lane = GameObject.Find("1stLane");
+        GameObject lane = GameObject.Find("TopLane");
         Transform[] points = lane.GetComponentsInChildren<Transform>();
         for (int i = 1; i < points.Length; i++)
         {
@@ -332,7 +332,7 @@ public class Invocation : NetworkBehaviour
     private void SummonTopP2(GameObject Monster)
     {
         int count = 0;
-        GameObject lane = GameObject.Find("1stLane");
+        GameObject lane = GameObject.Find("TopLane");
         Transform[] points = lane.GetComponentsInChildren<Transform>();
         for (int i = points.Length - 1; i >= 1; i--)
         {
@@ -344,7 +344,7 @@ public class Invocation : NetworkBehaviour
     private void SummonTop2P1(GameObject Monster)
     {
         int count = 0;
-        GameObject lane = GameObject.Find("2ndLane");
+        GameObject lane = GameObject.Find("Top2Lane");
         Transform[] points = lane.GetComponentsInChildren<Transform>();
         for (int i = 1; i < points.Length; i++)
         {
@@ -356,7 +356,7 @@ public class Invocation : NetworkBehaviour
     private void SummonTop2P2(GameObject Monster)
     {
         int count = 0;
-        GameObject lane = GameObject.Find("2ndLane");
+        GameObject lane = GameObject.Find("Top2Lane");
         Transform[] points = lane.GetComponentsInChildren<Transform>();
         for (int i = points.Length - 1; i >= 1; i--)
         {
@@ -368,7 +368,7 @@ public class Invocation : NetworkBehaviour
     private void SummonBotP1(GameObject Monster)
     {
         int count = 0;
-        GameObject lane = GameObject.Find("4thLane");
+        GameObject lane = GameObject.Find("BotLane");
         Transform[] points = lane.GetComponentsInChildren<Transform>();
         for (int i = 1; i < points.Length; i++)
         {
@@ -380,7 +380,7 @@ public class Invocation : NetworkBehaviour
     private void SummonBotP2(GameObject Monster)
     {
         int count = 0;
-        GameObject lane = GameObject.Find("4thLane");
+        GameObject lane = GameObject.Find("BotLane");
         Transform[] points = lane.GetComponentsInChildren<Transform>();
         for (int i = points.Length - 1; i >= 1; i--)
         {
@@ -392,7 +392,7 @@ public class Invocation : NetworkBehaviour
     private void SummonBot2P1(GameObject Monster)
     {
         int count = 0;
-        GameObject lane = GameObject.Find("5thLane");
+        GameObject lane = GameObject.Find("Bot2Lane");
         Transform[] points = lane.GetComponentsInChildren<Transform>();
         for (int i = 1; i < points.Length; i++)
         {
@@ -404,7 +404,7 @@ public class Invocation : NetworkBehaviour
     private void SummonBot2P2(GameObject Monster)
     {
         int count = 0;
-        GameObject lane = GameObject.Find("5thLane");
+        GameObject lane = GameObject.Find("Bot2Lane");
         Transform[] points = lane.GetComponentsInChildren<Transform>();
         for (int i = points.Length - 1; i >= 1; i--)
         {
