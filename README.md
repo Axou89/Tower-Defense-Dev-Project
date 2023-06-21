@@ -1,5 +1,10 @@
-# Tower Defense
+# Quacko's Defense
 
-This game was made by : @SambreV95 , @Aless124 and myself @Axou89
+It's a tower defense game made with Unity.
 
-The game uses : Unity version 2021.3.24f1
+This game was made by :
+- [@SambreV95](https://github.com/SambreV95)
+- [@Axou89](https://github.com/Axou89)
+- [@aless124](https://github.com/aless124)
+
+The game uses Unity version 2021.3.24f1
