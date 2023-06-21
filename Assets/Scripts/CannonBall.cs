@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class CannonBall : MonoBehaviour
 {
     private Transform target;
-    private float shotPower;
+    private int shotPower;
     private bool hasHitTarget;
 
     public void SetTarget(Transform target)
@@ -13,7 +14,7 @@ public class CannonBall : MonoBehaviour
         this.target = target;
     }
 
-    public void SetShotPower(float power)
+    public void SetShotPower(int power)
     {
         this.shotPower = power;
     }
@@ -33,7 +34,7 @@ public class CannonBall : MonoBehaviour
         transform.Translate(direction * movementDistance, Space.World);
 
         // Vérifie si le boulet de canon a atteint l'ennemi
-        if (distance <= movementDistance)
+        if (distance <= 2f)
         {
             HitTarget();
         }
@@ -54,6 +55,14 @@ public class CannonBall : MonoBehaviour
 
         // Détruit le boulet après le hit
         Destroy(gameObject, 1f);
+
+        if (target.GetComponent<Mob>().Shield)
+        {
+            target.GetComponent<Mob>().Shield = false;
+        } else
+        {
+            target.GetComponent<Mob>().PV -= shotPower / target.GetComponent<Mob>().Armor;
+        }
     }
 
     private void OnDestroy()

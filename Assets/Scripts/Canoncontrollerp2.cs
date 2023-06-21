@@ -7,7 +7,7 @@ public class Canoncontrollerp2 : MonoBehaviour
     public GameObject cannonBallPrefab; // Prefab du boulet de canon
     public Transform spawnPoint; // Spawn boulet
     public float fireRate = 3f; // Attackspeed
-    public float shotPower = 30f; // shotpower
+    public int shotPower; // shotpower
     public float maxDetectionDistance = 30f; // Range
 
     private float timer = 0f;

@@ -468,7 +468,7 @@ MonoBehaviour:
   cannonBallPrefab: {fileID: 3740648778638681417, guid: 2ec1cea30b10f6042902eee4a9d1283f, type: 3}
   spawnPoint: {fileID: 26825079}
   fireRate: 3
-  shotPower: 30
+  shotPower: 10
   maxDetectionDistance: 30
 --- !u!135 &26825081
 SphereCollider:
@@ -1365,7 +1365,7 @@ MonoBehaviour:
   cannonBallPrefab: {fileID: 3740648778638681417, guid: 2ec1cea30b10f6042902eee4a9d1283f, type: 3}
   spawnPoint: {fileID: 102143851}
   fireRate: 3
-  shotPower: 30
+  shotPower: 10
   maxDetectionDistance: 30
 --- !u!135 &102143853
 SphereCollider:
@@ -3528,7 +3528,7 @@ MonoBehaviour:
   cannonBallPrefab: {fileID: 3740648778638681417, guid: 2ec1cea30b10f6042902eee4a9d1283f, type: 3}
   spawnPoint: {fileID: 338418845}
   fireRate: 3
-  shotPower: 30
+  shotPower: 10
   maxDetectionDistance: 30
 --- !u!135 &338418847
 SphereCollider:
@@ -4361,7 +4361,7 @@ MonoBehaviour:
   cannonBallPrefab: {fileID: 3740648778638681417, guid: 2ec1cea30b10f6042902eee4a9d1283f, type: 3}
   spawnPoint: {fileID: 430018760}
   fireRate: 3
-  shotPower: 30
+  shotPower: 10
   maxDetectionDistance: 30
 --- !u!135 &430018762
 SphereCollider:
@@ -5777,7 +5777,7 @@ MonoBehaviour:
   cannonBallPrefab: {fileID: 3740648778638681417, guid: 2ec1cea30b10f6042902eee4a9d1283f, type: 3}
   spawnPoint: {fileID: 602916399}
   fireRate: 3
-  shotPower: 50
+  shotPower: 10
   maxDetectionDistance: 30
 --- !u!135 &602916401
 SphereCollider:
@@ -6346,7 +6346,7 @@ MonoBehaviour:
   cannonBallPrefab: {fileID: 3740648778638681417, guid: 2ec1cea30b10f6042902eee4a9d1283f, type: 3}
   spawnPoint: {fileID: 658758285}
   fireRate: 3
-  shotPower: 30
+  shotPower: 10
   maxDetectionDistance: 30
 --- !u!135 &658758287
 SphereCollider:
@@ -7164,7 +7164,7 @@ MonoBehaviour:
   cannonBallPrefab: {fileID: 3740648778638681417, guid: 2ec1cea30b10f6042902eee4a9d1283f, type: 3}
   spawnPoint: {fileID: 744725963}
   fireRate: 3
-  shotPower: 50
+  shotPower: 10
   maxDetectionDistance: 30
 --- !u!135 &744725965
 SphereCollider:
@@ -9247,7 +9247,7 @@ MonoBehaviour:
   cannonBallPrefab: {fileID: 3740648778638681417, guid: 2ec1cea30b10f6042902eee4a9d1283f, type: 3}
   spawnPoint: {fileID: 951544948}
   fireRate: 3
-  shotPower: 30
+  shotPower: 10
   maxDetectionDistance: 30
 --- !u!135 &951544950
 SphereCollider:
@@ -12669,7 +12669,7 @@ MonoBehaviour:
   cannonBallPrefab: {fileID: 3740648778638681417, guid: 2ec1cea30b10f6042902eee4a9d1283f, type: 3}
   spawnPoint: {fileID: 1291636904}
   fireRate: 3
-  shotPower: 50
+  shotPower: 10
   maxDetectionDistance: 30
 --- !u!135 &1291636906
 SphereCollider:
@@ -14055,7 +14055,7 @@ MonoBehaviour:
   cannonBallPrefab: {fileID: 3740648778638681417, guid: 2ec1cea30b10f6042902eee4a9d1283f, type: 3}
   spawnPoint: {fileID: 1482479473}
   fireRate: 3
-  shotPower: 50
+  shotPower: 10
   maxDetectionDistance: 30
 --- !u!135 &1482479475
 SphereCollider:
@@ -14687,7 +14687,7 @@ MonoBehaviour:
   cannonBallPrefab: {fileID: 3740648778638681417, guid: 2ec1cea30b10f6042902eee4a9d1283f, type: 3}
   spawnPoint: {fileID: 1524955430}
   fireRate: 3
-  shotPower: 50
+  shotPower: 10
   maxDetectionDistance: 30
 --- !u!1001 &1527553775
 PrefabInstance:
@@ -18228,7 +18228,7 @@ MonoBehaviour:
   cannonBallPrefab: {fileID: 3740648778638681417, guid: 2ec1cea30b10f6042902eee4a9d1283f, type: 3}
   spawnPoint: {fileID: 1899602205}
   fireRate: 3
-  shotPower: 5
+  shotPower: 10
   maxDetectionDistance: 30
 --- !u!135 &1899602207
 SphereCollider:
