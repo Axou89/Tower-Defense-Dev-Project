@@ -2363,6 +2363,7 @@ GameObject:
   - component: {fileID: 4063552230360950}
   - component: {fileID: 95805638432926132}
   - component: {fileID: 136275810615880682}
+  - component: {fileID: 8956920741795822237}
   - component: {fileID: 4936996904406974458}
   m_Layer: 0
   m_Name: PolyArtWizardMaskTintMat
@@ -2423,6 +2424,34 @@ CapsuleCollider:
   m_Height: 1.8772755
   m_Direction: 1
   m_Center: {x: 0, y: 0.99, z: 0}
+--- !u!114 &8956920741795822237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953271650171834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291b8f158fe819c42a0d61fa07c97356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AD: 1
+  AP: 5
+  Armor: 1
+  RM: 1
+  PV: 5
+  Shield: 0
+  Speed: 4
+  AttackSpeed: 1
+  Range: 1
+  GoldPrice: 10
+  Points:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Player: 
 --- !u!114 &4936996904406974458
 MonoBehaviour:
   m_ObjectHideFlags: 0

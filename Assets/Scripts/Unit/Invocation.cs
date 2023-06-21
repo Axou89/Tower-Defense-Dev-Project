@@ -59,7 +59,7 @@ public class Invocation : NetworkBehaviour
                     GameObject Monster = Instantiate(Squelette, new Vector3(15f, 2.14f, 49.62f), Quaternion.identity);
                     NetworkObject InvocationMonsterObject = Monster.GetComponent<NetworkObject>();
                     Monster.GetComponent<NetworkObject>().Spawn(); ;   // Marche mais ça spawn que si serveur ou host
-                    Monster.tag = "Mob";
+                    Monster.tag = "MobP1";
                     SummonMidP1(Monster);
                     Debug.Log("Squelette equipe1 invoqué");
                 }
@@ -311,6 +311,7 @@ public class Invocation : NetworkBehaviour
         for (int i = 1; i < points.Length; i++)
         {
             Monster.GetComponent<Mob>().Points[count] = points[i];
+            Monster.GetComponent<Mob>().Player = "P1";
             count++;
         }
     }
@@ -322,6 +323,7 @@ public class Invocation : NetworkBehaviour
         for (int i = points.Length - 1; i >= 1; i--)
         {
             Monster.GetComponent<Mob>().Points[count] = points[i];
+            Monster.GetComponent<Mob>().Player = "P2";
             count++;
         }
     }
@@ -333,6 +335,7 @@ public class Invocation : NetworkBehaviour
         for (int i = 1; i < points.Length; i++)
         {
             Monster.GetComponent<Mob>().Points[count] = points[i];
+            Monster.GetComponent<Mob>().Player = "P1";
             count++;
         }
     }
@@ -344,6 +347,7 @@ public class Invocation : NetworkBehaviour
         for (int i = points.Length - 1; i >= 1; i--)
         {
             Monster.GetComponent<Mob>().Points[count] = points[i];
+            Monster.GetComponent<Mob>().Player = "P2";
             count++;
         }
     }
@@ -355,6 +359,7 @@ public class Invocation : NetworkBehaviour
         for (int i = 1; i < points.Length; i++)
         {
             Monster.GetComponent<Mob>().Points[count] = points[i];
+            Monster.GetComponent<Mob>().Player = "P1";
             count++;
         }
     }
@@ -366,6 +371,7 @@ public class Invocation : NetworkBehaviour
         for (int i = points.Length - 1; i >= 1; i--)
         {
             Monster.GetComponent<Mob>().Points[count] = points[i];
+            Monster.GetComponent<Mob>().Player = "P2";
             count++;
         }
     }
@@ -377,6 +383,7 @@ public class Invocation : NetworkBehaviour
         for (int i = 1; i < points.Length; i++)
         {
             Monster.GetComponent<Mob>().Points[count] = points[i];
+            Monster.GetComponent<Mob>().Player = "P1";
             count++;
         }
     }
@@ -388,6 +395,7 @@ public class Invocation : NetworkBehaviour
         for (int i = points.Length - 1; i >= 1; i--)
         {
             Monster.GetComponent<Mob>().Points[count] = points[i];
+            Monster.GetComponent<Mob>().Player = "P2";
             count++;
         }
     }
@@ -399,6 +407,7 @@ public class Invocation : NetworkBehaviour
         for (int i = 1; i < points.Length; i++)
         {
             Monster.GetComponent<Mob>().Points[count] = points[i];
+            Monster.GetComponent<Mob>().Player = "P1";
             count++;
         }
     }
@@ -410,6 +419,7 @@ public class Invocation : NetworkBehaviour
         for (int i = points.Length - 1; i >= 1; i--)
         {
             Monster.GetComponent<Mob>().Points[count] = points[i];
+            Monster.GetComponent<Mob>().Player = "P2";
             count++;
         }
     }

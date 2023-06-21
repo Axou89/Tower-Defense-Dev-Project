@@ -15,11 +15,13 @@ public class Mob : MonoBehaviour
     public float Range;
     public float GoldPrice;
     public Transform[] Points;
+    public string Player;
 
     private bool isMoving = true;
     private int currentPosition = 1;
     private int lenPosition;
     private bool isInvincible = false;
+    private Vector3 movementDirection;
 
     void Start()
     {
@@ -37,6 +39,10 @@ public class Mob : MonoBehaviour
         if (isMoving)
         {
             transform.position = Vector3.MoveTowards(transform.position, Points[currentPosition].position, Speed * Time.deltaTime);
+
+            Quaternion targetRotation = Quaternion.LookRotation(transform.position);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 100 * Time.deltaTime);
+
             if (transform.position == Points[currentPosition].position)
             {
                 currentPosition++;
@@ -46,6 +52,29 @@ public class Mob : MonoBehaviour
                 }
             }
         }
+
+        RayHit();
+
+        /*
+        var ray = new Ray(this.transform.position, this.transform.forward);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            var objectHit = hit.transform.gameObject;
+            if (objectHit != null)
+            {
+                if (Player == "P1" && objectHit.CompareTag("TowerP2"))
+                {
+                    Debug.Log("test");
+                    Destroy(objectHit);
+                } else if (Player == "P2" && objectHit.CompareTag("TowerP1"))
+                {
+                    Destroy(objectHit);
+                }
+            }
+        }
+        */
+
     }
 
     IEnumerator GetHit(Collider other)
@@ -75,6 +104,46 @@ public class Mob : MonoBehaviour
         if (other.GetType().ToString().Equals("UnityEngine.BoxCollider") && !this.CompareTag(other.gameObject.tag) && !isInvincible)
         {
             StartCoroutine(GetHit(other));
+        }
+    }
+
+    private void RayHit()
+    {
+        /*
+        var ray = new Ray(this.transform.position, this.transform.forward);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 10))
+        {
+            GameObject objectHit = hit.transform.gameObject;
+            if (Player == "P1" && objectHit.CompareTag("TowerP2"))
+            {
+                Debug.Log("Test");
+                Destroy(objectHit);
+            } else if (Player == "P2" && objectHit.CompareTag("TowerP1"))
+            {
+                Destroy(objectHit);
+            }
+        }
+        */
+
+        float raycastDistance = 5f;
+
+        Ray ray = new Ray(transform.position, transform.forward);
+
+        RaycastHit[] hits = Physics.RaycastAll(ray, raycastDistance);
+
+        for (int i = 0; i < hits.Length; i++)
+        {
+            RaycastHit hit = hits[i];
+            GameObject hitObject = hit.collider.gameObject;
+
+            if (Player == "P1" && hitObject.CompareTag("TowerP2"))
+            {
+                Destroy(hitObject);
+            } else if (Player == "P2" && hitObject.CompareTag("TowerP1"))
+            {
+                Destroy(hitObject);
+            }
         }
     }
 }

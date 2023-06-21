@@ -1627,9 +1627,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AD: 0
   AP: 0
-  Armor: 1
+  Armor: 2
   RM: 1
-  PV: 1
+  PV: 10
   Shield: 0
   Speed: 5
   AttackSpeed: 1
@@ -1640,6 +1640,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  Player: 
 --- !u!135 &7872908409410926020
 SphereCollider:
   m_ObjectHideFlags: 0
