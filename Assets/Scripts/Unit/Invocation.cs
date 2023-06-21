@@ -6,6 +6,7 @@ public class Invocation : NetworkBehaviour
 {
     public ChoseLane Lane;
     public Gold Gold;
+    public GameObject[] Lanes;
 
     [SerializeField]
     private ChoosePlayer Choix;
@@ -58,14 +59,14 @@ public class Invocation : NetworkBehaviour
                     GameObject Monster = Instantiate(Squelette, new Vector3(15f, 2.14f, 49.62f), Quaternion.identity);
                     NetworkObject InvocationMonsterObject = Monster.GetComponent<NetworkObject>();
                     Monster.GetComponent<NetworkObject>().Spawn(); ;   // Marche mais ça spawn que si serveur ou host
-                    Monster.tag = "MobAlly";
+                    Monster.tag = "Mob";
                     SummonMidP1(Monster);
                     Debug.Log("Squelette equipe1 invoqué");
                 }
                 else if (Choix.Player == 2)
                 {
                     GameObject Monster = Instantiate(Squelette, new Vector3(82, 2.14f, 49.62f), Quaternion.identity);
-                    Monster.tag = "MobEnemy";
+                    Monster.tag = "MobP2";
                     SummonMidP2(Monster);
                     Debug.Log("Squelette equipe2 invoqué");
                 }
@@ -81,15 +82,15 @@ public class Invocation : NetworkBehaviour
                 if (Choix.Player == 1)
                 {
                     GameObject Monster = Instantiate(Squelette, new Vector3(15f, 2.14f, 69.3f), Quaternion.identity);
-                    Monster.tag = "MobAlly";
-                    SummonTop2P1(Monster);
+                    Monster.tag = "MobP1";
+                    SummonTopP1(Monster);
                     Debug.Log("Squelette equipe1 invoqué");
                 }
                 else if (Choix.Player == 2)
                 {
                     GameObject Monster = Instantiate(Squelette, new Vector3(82, 2.14f, 69.3f), Quaternion.identity);
-                    Monster.tag = "MobEnemy";
-                    SummonTop2P2(Monster);
+                    Monster.tag = "MobP2";
+                    SummonTopP2(Monster);
                     Debug.Log("Squelette equipe2 invoqué");
                 }
             }
@@ -104,15 +105,15 @@ public class Invocation : NetworkBehaviour
                 if (Choix.Player == 1)
                 {
                     GameObject Monster = Instantiate(Squelette, new Vector3(15f, 2.14f, 75.4f), Quaternion.identity);
-                    Monster.tag = "MobAlly";
-                    SummonTopP1(Monster);
+                    Monster.tag = "MobP1";
+                    SummonTop2P1(Monster);
                     Debug.Log("Squelette equipe1 invoqué");
                 }
                 else if (Choix.Player == 2)
                 {
                     GameObject Monster = Instantiate(Squelette, new Vector3(83.3f, 2.14f, 75.4f), Quaternion.identity);
-                    Monster.tag = "MobEnemy";
-                    SummonTopP2(Monster);
+                    Monster.tag = "MobP2";
+                    SummonTop2P2(Monster);
                     Debug.Log("Squelette equipe2 invoqué");
                 }
             }
@@ -129,14 +130,14 @@ public class Invocation : NetworkBehaviour
                 if (Choix.Player == 1)
                 {
                     GameObject Monster = Instantiate(Squelette, new Vector3(15f, 2.14f, 31.3f), Quaternion.identity);
-                    Monster.tag = "MobAlly";
+                    Monster.tag = "MobP1";
                     SummonBotP1(Monster);
                     Debug.Log("Squelette equipe1 invoqué");
                 }
                 else if (Choix.Player == 2)
                 {
                     GameObject Monster = Instantiate(Squelette, new Vector3(81.5f, 2.14f, 31.3f), Quaternion.identity);
-                    Monster.tag = "MobEnemy";
+                    Monster.tag = "MobP2";
                     SummonBotP2(Monster);
                     Debug.Log("Squelette equipe2 invoqué");
                 }
@@ -153,14 +154,14 @@ public class Invocation : NetworkBehaviour
                 if (Choix.Player == 1)
                 {
                     GameObject Monster = Instantiate(Squelette, new Vector3(15f, 2.14f, 26.1f), Quaternion.identity);
-                    Monster.tag = "MobAlly";
+                    Monster.tag = "MobP1";
                     SummonBot2P1(Monster);
                     Debug.Log("Squelette equipe1 invoqué");
                 }
                 else if (Choix.Player == 2)
                 {
                     GameObject Monster = Instantiate(Squelette, new Vector3(81.5f, 2.14f, 26.1f), Quaternion.identity);
-                    Monster.tag = "MobEnemy";
+                    Monster.tag = "MobP2";
                     SummonBot2P2(Monster);
                     Debug.Log("Squelette equipe2 invoqué");
                 }
@@ -186,13 +187,15 @@ public class Invocation : NetworkBehaviour
                 if (Choix.Player == 1)
                 {
                     GameObject Monster = Instantiate(Magicien, new Vector3(15f, 2.14f, 49.62f), Quaternion.identity);
-                    Monster.tag = "MobAlly";
+                    Monster.tag = "MobP1";
+                    SummonMidP1(Monster);
                     Debug.Log("Magicien equipe1 invoqué");
                 }
                 else if (Choix.Player == 2)
                 {
                     GameObject Monster = Instantiate(Magicien, new Vector3(82, 2.14f, 49.62f), Quaternion.identity);
-                    Monster.tag = "MobEnemy";
+                    Monster.tag = "MobP2";
+                    SummonMidP2(Monster);
                     Debug.Log("Magicien equipe2 invoqué");
                 }
             }
@@ -207,13 +210,15 @@ public class Invocation : NetworkBehaviour
                 if (Choix.Player == 1)
                 {
                     GameObject Monster = Instantiate(Magicien, new Vector3(15f, 2.14f, 69.3f), Quaternion.identity);
-                    Monster.tag = "MobAlly";
+                    Monster.tag = "MobP1";
+                    SummonTopP1(Monster);
                     Debug.Log("Magicien equipe1 invoqué");
                 }
                 else if (Choix.Player == 2)
                 {
                     GameObject Monster = Instantiate(Magicien, new Vector3(82, 2.14f, 69.3f), Quaternion.identity);
-                    Monster.tag = "MobEnemy";
+                    Monster.tag = "MobP2";
+                    SummonTopP2(Monster);
                     Debug.Log("Magicien equipe2 invoqué");
                 }
             }
@@ -228,13 +233,15 @@ public class Invocation : NetworkBehaviour
                 if (Choix.Player == 1)
                 {
                     GameObject Monster = Instantiate(Magicien, new Vector3(15f, 2.14f, 75.4f), Quaternion.identity);
-                    Monster.tag = "MobAlly";
+                    Monster.tag = "MobP1";
+                    SummonTop2P1(Monster);
                     Debug.Log("Magicien equipe1 invoqué");
                 }
                 else if (Choix.Player == 2)
                 {
                     GameObject Monster = Instantiate(Magicien, new Vector3(83.3f, 2.14f, 75.4f), Quaternion.identity);
-                    Monster.tag = "MobEnemy";
+                    Monster.tag = "MobP2";
+                    SummonTop2P2(Monster);
                     Debug.Log("Magicien equipe2 invoqué");
                 }
             }
@@ -251,13 +258,15 @@ public class Invocation : NetworkBehaviour
                 if (Choix.Player == 1)
                 {
                     GameObject Monster = Instantiate(Magicien, new Vector3(15f, 2.14f, 31.3f), Quaternion.identity);
-                    Monster.tag = "MobAlly";
+                    Monster.tag = "MobP1";
+                    SummonBotP1(Monster);
                     Debug.Log("Squelette equipe1 invoqué");
                 }
                 else if (Choix.Player == 2)
                 {
                     GameObject Monster = Instantiate(Magicien, new Vector3(81.5f, 2.14f, 31.3f), Quaternion.identity);
-                    Monster.tag = "MobEnemy";
+                    Monster.tag = "MobP2";
+                    SummonBotP2(Monster);
                     Debug.Log("Magicien equipe2 invoqué");
                 }
             }
@@ -273,13 +282,15 @@ public class Invocation : NetworkBehaviour
                 if (Choix.Player == 1)
                 {
                     GameObject Monster = Instantiate(Magicien, new Vector3(15f, 2.14f, 26.1f), Quaternion.identity);
-                    Monster.tag = "MobAlly";
+                    Monster.tag = "MobP1";
+                    SummonBot2P1(Monster);
                     Debug.Log("Magicien equipe1 invoqué");
                 }
                 else if (Choix.Player == 2)
                 {
                     GameObject Monster = Instantiate(Magicien, new Vector3(81.5f, 2.14f, 26.1f), Quaternion.identity);
-                    Monster.tag = "MobEnemy";
+                    Monster.tag = "MobP2";
+                    SummonBot2P2(Monster);
                     Debug.Log("Magicien equipe2 invoqué");
                 }
 
@@ -296,8 +307,7 @@ public class Invocation : NetworkBehaviour
     private void SummonMidP1(GameObject Monster)
     {
         int count = 0;
-        GameObject lane = GameObject.Find("MidLane");
-        Transform[] points = lane.GetComponentsInChildren<Transform>();
+        Transform[] points = Lanes[2].GetComponentsInChildren<Transform>();
         for (int i = 1; i < points.Length; i++)
         {
             Monster.GetComponent<Mob>().Points[count] = points[i];
@@ -308,8 +318,7 @@ public class Invocation : NetworkBehaviour
     private void SummonMidP2(GameObject Monster)
     {
         int count = 0;
-        GameObject lane = GameObject.Find("MidLane");
-        Transform[] points = lane.GetComponentsInChildren<Transform>();
+        Transform[] points = Lanes[2].GetComponentsInChildren<Transform>();
         for (int i = points.Length - 1; i >= 1; i--)
         {
             Monster.GetComponent<Mob>().Points[count] = points[i];
@@ -320,8 +329,7 @@ public class Invocation : NetworkBehaviour
     private void SummonTopP1(GameObject Monster)
     {
         int count = 0;
-        GameObject lane = GameObject.Find("TopLane");
-        Transform[] points = lane.GetComponentsInChildren<Transform>();
+        Transform[] points = Lanes[1].GetComponentsInChildren<Transform>();
         for (int i = 1; i < points.Length; i++)
         {
             Monster.GetComponent<Mob>().Points[count] = points[i];
@@ -332,8 +340,7 @@ public class Invocation : NetworkBehaviour
     private void SummonTopP2(GameObject Monster)
     {
         int count = 0;
-        GameObject lane = GameObject.Find("TopLane");
-        Transform[] points = lane.GetComponentsInChildren<Transform>();
+        Transform[] points = Lanes[1].GetComponentsInChildren<Transform>();
         for (int i = points.Length - 1; i >= 1; i--)
         {
             Monster.GetComponent<Mob>().Points[count] = points[i];
@@ -344,8 +351,7 @@ public class Invocation : NetworkBehaviour
     private void SummonTop2P1(GameObject Monster)
     {
         int count = 0;
-        GameObject lane = GameObject.Find("Top2Lane");
-        Transform[] points = lane.GetComponentsInChildren<Transform>();
+        Transform[] points = Lanes[0].GetComponentsInChildren<Transform>();
         for (int i = 1; i < points.Length; i++)
         {
             Monster.GetComponent<Mob>().Points[count] = points[i];
@@ -356,8 +362,7 @@ public class Invocation : NetworkBehaviour
     private void SummonTop2P2(GameObject Monster)
     {
         int count = 0;
-        GameObject lane = GameObject.Find("Top2Lane");
-        Transform[] points = lane.GetComponentsInChildren<Transform>();
+        Transform[] points = Lanes[0].GetComponentsInChildren<Transform>();
         for (int i = points.Length - 1; i >= 1; i--)
         {
             Monster.GetComponent<Mob>().Points[count] = points[i];
@@ -368,8 +373,7 @@ public class Invocation : NetworkBehaviour
     private void SummonBotP1(GameObject Monster)
     {
         int count = 0;
-        GameObject lane = GameObject.Find("BotLane");
-        Transform[] points = lane.GetComponentsInChildren<Transform>();
+        Transform[] points = Lanes[3].GetComponentsInChildren<Transform>();
         for (int i = 1; i < points.Length; i++)
         {
             Monster.GetComponent<Mob>().Points[count] = points[i];
@@ -380,8 +384,7 @@ public class Invocation : NetworkBehaviour
     private void SummonBotP2(GameObject Monster)
     {
         int count = 0;
-        GameObject lane = GameObject.Find("BotLane");
-        Transform[] points = lane.GetComponentsInChildren<Transform>();
+        Transform[] points = Lanes[3].GetComponentsInChildren<Transform>();
         for (int i = points.Length - 1; i >= 1; i--)
         {
             Monster.GetComponent<Mob>().Points[count] = points[i];
@@ -392,8 +395,7 @@ public class Invocation : NetworkBehaviour
     private void SummonBot2P1(GameObject Monster)
     {
         int count = 0;
-        GameObject lane = GameObject.Find("Bot2Lane");
-        Transform[] points = lane.GetComponentsInChildren<Transform>();
+        Transform[] points = Lanes[4].GetComponentsInChildren<Transform>();
         for (int i = 1; i < points.Length; i++)
         {
             Monster.GetComponent<Mob>().Points[count] = points[i];
@@ -404,8 +406,7 @@ public class Invocation : NetworkBehaviour
     private void SummonBot2P2(GameObject Monster)
     {
         int count = 0;
-        GameObject lane = GameObject.Find("Bot2Lane");
-        Transform[] points = lane.GetComponentsInChildren<Transform>();
+        Transform[] points = Lanes[4].GetComponentsInChildren<Transform>();
         for (int i = points.Length - 1; i >= 1; i--)
         {
             Monster.GetComponent<Mob>().Points[count] = points[i];
