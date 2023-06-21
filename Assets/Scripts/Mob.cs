@@ -21,7 +21,7 @@ public class Mob : MonoBehaviour
     private int currentPosition = 1;
     private int lenPosition;
     private bool isInvincible = false;
-    private Vector3 movementDirection;
+    private ScoreManager scoreManager;
 
     void Start()
     {
@@ -54,27 +54,6 @@ public class Mob : MonoBehaviour
         }
 
         RayHit();
-
-        /*
-        var ray = new Ray(this.transform.position, this.transform.forward);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
-        {
-            var objectHit = hit.transform.gameObject;
-            if (objectHit != null)
-            {
-                if (Player == "P1" && objectHit.CompareTag("TowerP2"))
-                {
-                    Debug.Log("test");
-                    Destroy(objectHit);
-                } else if (Player == "P2" && objectHit.CompareTag("TowerP1"))
-                {
-                    Destroy(objectHit);
-                }
-            }
-        }
-        */
-
     }
 
     IEnumerator GetHit(Collider other)
@@ -109,23 +88,6 @@ public class Mob : MonoBehaviour
 
     private void RayHit()
     {
-        /*
-        var ray = new Ray(this.transform.position, this.transform.forward);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 10))
-        {
-            GameObject objectHit = hit.transform.gameObject;
-            if (Player == "P1" && objectHit.CompareTag("TowerP2"))
-            {
-                Debug.Log("Test");
-                Destroy(objectHit);
-            } else if (Player == "P2" && objectHit.CompareTag("TowerP1"))
-            {
-                Destroy(objectHit);
-            }
-        }
-        */
-
         float raycastDistance = 5f;
 
         Ray ray = new Ray(transform.position, transform.forward);
@@ -139,9 +101,13 @@ public class Mob : MonoBehaviour
 
             if (Player == "P1" && hitObject.CompareTag("TowerP2"))
             {
+                GameObject score = GameObject.Find("ScoreManager");
+                score.GetComponent<ScoreManager>().ScoreP1 += 10;
                 Destroy(hitObject);
             } else if (Player == "P2" && hitObject.CompareTag("TowerP1"))
             {
+                GameObject score = GameObject.Find("ScoreManager");
+                score.GetComponent<ScoreManager>().ScoreP2 += 10;
                 Destroy(hitObject);
             }
         }

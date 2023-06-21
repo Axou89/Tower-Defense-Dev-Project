@@ -1641,6 +1641,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   Player: 
+  Scores:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!135 &7872908409410926020
 SphereCollider:
   m_ObjectHideFlags: 0
